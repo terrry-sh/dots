@@ -63,7 +63,8 @@ vim.opt.updatetime = 50
 -- set nocompatible
 
 
-
+-- Add mouse support
+vim.opt.mouse='a'
 
 vim.cmd(
     [[
