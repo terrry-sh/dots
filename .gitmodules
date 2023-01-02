@@ -1,0 +1,3 @@
+[submodule "pinkmare"]
+	path = pinkmare
+	url = git@github.com:Matsuuu/pinkmare.git

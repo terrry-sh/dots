@@ -66,9 +66,16 @@ vim.opt.updatetime = 50
 -- Add mouse support
 vim.opt.mouse='a'
 
+
 vim.cmd(
     [[
         colorscheme pinkmare
-        "--- hi! MatchParen cterm=NONE,bold gui=NONE,bold  guibg=#87c095 guifg=NONE
+        " --- hi! MatchParen cterm=NONE,bold gui=NONE,bold  guibg=#87c095 guifg=NONE
+
+        set noshowmode
+
+        let g:lightline = {
+            \ 'colorscheme': 'powerline',
+            \ }
     ]]
 )
