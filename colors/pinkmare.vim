@@ -1,1 +1,1 @@
-/home/archterry/.config/nvim/pinkmare/colors/pinkmare.vim
+../pinkmare/colors/pinkmare.vim
