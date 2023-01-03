@@ -1,6 +1,6 @@
-[submodule "pinkmare"]
-	path = pinkmare
+[submodule "nvim/pinkmare"]
+	path = nvim/pinkmare
 	url = git@github.com:Matsuuu/pinkmare.git
-[submodule "pack/plugins/start/lightline"]
-	path = pack/plugins/start/lightline
+[submodule "nvim/pack/plugins/start/lightline"]
+	path = nvim/pack/plugins/start/lightline
 	url = git@github.com:itchyny/lightline.vim.git
