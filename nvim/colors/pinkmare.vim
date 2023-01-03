@@ -1,0 +1,1 @@
+../pinkmare/colors/pinkmare.vim
