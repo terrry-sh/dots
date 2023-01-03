@@ -5,8 +5,8 @@
 DOTS_DIR="${HOME}/dots"
 export PATH=$PATH
 
-export LC_ALL=en_IN.UTF-8
-export LANG=en_IN.UTF-8
+# export LC_ALL=en_IN.UTF-8
+# export LANG=en_IN.UTF-8
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
