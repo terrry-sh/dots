@@ -22,7 +22,7 @@ alias rm='rm -i'
 case "$(uname -s)" in
 Darwin)
     # BREW STUFF
-    if [ -e "$(/opt/homebrew/bin/brew shellenv)" ]; then eval "$(/opt/homebrew/bin/brew shellenv)"; fi
+    if [ -e "/opt/homebrew/bin/brew" ]; then eval "$(/opt/homebrew/bin/brew shellenv)"; fi
     ;;
 Linux)
     if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then . "${HOME}/.nix-profile/etc/profile.d/nix.sh"; fi
