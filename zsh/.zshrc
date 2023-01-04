@@ -101,6 +101,8 @@ setopt interactive_comments # enables '#' comments in interactive mode
 
 stty stop undef		# Disable ctrl-s to freeze terminal. -> just annoying
 
+setopt glob_dots # no special treatment for file names with leading dot
+setopt no_auto_menu # require an extra TAB press to open the completion menu
 
 # vi mode
 # bindkey -v
