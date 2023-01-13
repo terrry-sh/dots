@@ -3,7 +3,7 @@
 [[ $- != *i* ]] && return 
 
 DOTS_DIR="${HOME}/dots"
-export PATH=$PATH
+export PATH="${PATH}:${HOME}/myscripts"
 
 # export LC_ALL=en_IN.UTF-8
 # export LANG=en_IN.UTF-8
