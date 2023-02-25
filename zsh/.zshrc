@@ -31,6 +31,7 @@ Darwin)
     ;;
 Linux)
     if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then . "${HOME}/.nix-profile/etc/profile.d/nix.sh"; fi
+    [[ ! -r /home/ts/.opam/opam-init/init.zsh ]] || source "${HOME}/.opam/opam-init/init.zsh"  > /dev/null 2> /dev/null
     ;;
 CYGWIN* | MINGW32* | MSYS* | MINGW*)
     # echo 'MS Windows'
@@ -201,7 +202,9 @@ precmd() {
     local hostname="%F{white}%M%f"
 
 
-    local currdir="%F{yellow}%(4~|%-1~/…/%2~|%3~)%f"
+    # Edit this for showing N paths
+    # local currdir="%F{yellow}%(4~|%-1~/…/%2~|%3~)%f"
+    local currdir="%F{yellow}%(5~|%-1~/…/%3~|%4~)%f"
     #PS1="%B%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%M%{$fg[blue]%}] %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
 
     if [[ -z ${vcs_info_msg_0_} ]]; then
