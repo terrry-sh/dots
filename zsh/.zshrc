@@ -56,6 +56,7 @@ then
     Linux)
         alias lsal='ls --color=auto -al'
         alias ls='ls --color=auto'
+        [ -f "/home/ts/.ghcup/env" ] && source "/home/ts/.ghcup/env" # ghcup-env
         ;;
 
     CYGWIN* | MINGW32* | MSYS* | MINGW*)
