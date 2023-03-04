@@ -97,6 +97,7 @@ export TERMINAL="alacritty"
 # History in cache directory:
 export HISTFILESIZE=100000
 export HISTSIZE=100000
+export SAVEHIST=100000
 export HISTTIMEFORMAT="[%F %T] "
 HISTFILE=$HOME/.zsh_history
 
