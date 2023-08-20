@@ -259,8 +259,11 @@ if command -v tmux &> /dev/null && [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$
     __start_default_tmux
 fi
 
+# disabling this since we want to start normally
+# in order to SSh into machines with tmux
+# not going to worry about nested tmuxes
 # automatically start TMUX
-if command -v tmux &> /dev/null && [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]; then
-    __start_default_tmux
-fi
+# if command -v tmux &> /dev/null && [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]; then
+#     __start_default_tmux
+# fi
 
