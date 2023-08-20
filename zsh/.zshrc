@@ -41,6 +41,7 @@ CYGWIN* | MINGW32* | MSYS* | MINGW*)
     ;;
 esac
 
+### PATH is set up now
 
 if ! command -v exa &> /dev/null
 then
@@ -244,3 +245,22 @@ precmd() {
 
     PROMPT="%B${left_square_bracket}${username}${separator}${hostname}${right_square_bracket} ${currdir} ${git}${jobs}${prompter}%b " 
 }
+
+
+# https://stackoverflow.com/questions/27613209/how-to-automatically-start-tmux-on-ssh-session/43819740#43819740
+START_TMUX_SESSION_NAME="start"
+
+__start_default_tmux () {
+  tmux attach-session -t $START_TMUX_SESSION_NAME || tmux new-session -s $START_TMUX_SESSION_NAME 
+}
+
+# automatically start TMUX on SSH 
+if command -v tmux &> /dev/null && [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
+    __start_default_tmux
+fi
+
+# automatically start TMUX
+if command -v tmux &> /dev/null && [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]; then
+    __start_default_tmux
+fi
+
