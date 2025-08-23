@@ -27,7 +27,7 @@ Darwin)
     # This line is placed into bash.bashrc and zsh.zshrc
     # So if the default installation is done this will never need to be run
     # I'll keep it here for reminder
-    # if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'; fi
+    if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then . "${HOME}/.nix-profile/etc/profile.d/nix.sh"; fi
     ;;
 Linux)
     if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then . "${HOME}/.nix-profile/etc/profile.d/nix.sh"; fi
