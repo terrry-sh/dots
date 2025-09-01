@@ -1,6 +1,6 @@
 
 # If you are not interactive don't run anything below this line
-[[ $- != *i* ]] && return 
+[[ $- != *i* ]] && return
 
 DOTS_DIR="${HOME}/dots"
 export PATH="${PATH}:${HOME}/myscripts"
@@ -18,6 +18,7 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
 
+alias gsm="git submodule"
 
 case "$(uname -s)" in
 Darwin)
@@ -28,6 +29,7 @@ Darwin)
     # So if the default installation is done this will never need to be run
     # I'll keep it here for reminder
     if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then . "${HOME}/.nix-profile/etc/profile.d/nix.sh"; fi
+    alias timeout='gtimeout'
     ;;
 Linux)
     if [ -e "${HOME}/.nix-profile/etc/profile.d/nix.sh" ]; then . "${HOME}/.nix-profile/etc/profile.d/nix.sh"; fi
@@ -105,7 +107,7 @@ HISTFILE=$HOME/.zsh_history
 
 # MAN ZSHOPTIONS to see more
 # cd without the need of typing cd
-setopt auto_cd nomatch 
+setopt auto_cd nomatch
 setopt interactive_comments # enables '#' comments in interactive mode
 
 stty stop undef		# Disable ctrl-s to freeze terminal. -> just annoying
@@ -140,7 +142,7 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 
     ## I have no idea what this line does so not including it
-    #'r:|[._-]=* r:|=*' 
+    #'r:|[._-]=* r:|=*'
     ## This line matches backwards and forwards
 zstyle ':completion:*' matcher-list '' '+m:{a-zA-Z}={A-Za-z}' \
     '+l:|=* r:|=*'
@@ -160,7 +162,7 @@ bindkey '^e' edit-command-line
 
 source "${DOTS_DIR}/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 2>/dev/null
 
-## Not autocomplete 
+## Not autocomplete
 ## For the grey suggestions
 source "${DOTS_DIR}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" 2>/dev/null
 
@@ -175,7 +177,7 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 
 
-# enable only git 
+# enable only git
 zstyle ':vcs_info:*' enable git
 
 # # Check the repository for changes so they can be used in %u/%c (see
@@ -243,7 +245,7 @@ precmd() {
 
     local prompter="%F{magenta}%(!.#.λ)%f"
 
-    PROMPT="%B${left_square_bracket}${username}${separator}${hostname}${right_square_bracket} ${currdir} ${git}${jobs}${prompter}%b " 
+    PROMPT="%B${left_square_bracket}${username}${separator}${hostname}${right_square_bracket} ${currdir} ${git}${jobs}${prompter}%b "
 }
 
 
@@ -251,10 +253,10 @@ precmd() {
 START_TMUX_SESSION_NAME="start"
 
 __start_default_tmux () {
-  tmux attach-session -t $START_TMUX_SESSION_NAME || tmux new-session -s $START_TMUX_SESSION_NAME 
+  tmux attach-session -t $START_TMUX_SESSION_NAME || tmux new-session -s $START_TMUX_SESSION_NAME
 }
 
-# automatically start TMUX on SSH 
+# automatically start TMUX on SSH
 if command -v tmux &> /dev/null && [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
     __start_default_tmux
 fi
@@ -266,4 +268,3 @@ fi
 # if command -v tmux &> /dev/null && [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]]; then
 #     __start_default_tmux
 # fi
-
