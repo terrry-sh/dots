@@ -1,0 +1,30 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \"🔔 Claude Code\" -message \"Claude needs your input\" -sound $(echo -e \"finished-coding\\ndone\\nwanchengle\" | sort -R | head -1).mp3"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title \"🔔 Claude Code\" -message \"Claude needs your input\" -sound $(echo -e \"finished-coding\\ndone\\nwanchengle\" | sort -R | head -1).mp3"
+          }
+        ]
+      }
+    ]
+  }
+}

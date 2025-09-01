@@ -12,6 +12,11 @@ DOTS_TMUX_PATH="${HOME}/.tmux.conf"
 DOTS_ALACRITTY_PARENT_DIR="${HOME}/.config/alacritty"
 DOTS_ALACRITTY_PATH="${DOTS_ALACRITTY_PARENT_DIR}/alacritty.toml"
 
+DOTS_CLAUDE_DIR="${HOME}/.claude"
+DOTS_CLAUDE_SETTINGS_PATH="${DOTS_CLAUDE_DIR}/settings.json"
+DOTS_CLAUDE_STATUSLINE_PATH="${DOTS_CLAUDE_DIR}/statusline-command.sh"
+DOTS_SOUNDS_DIR="${HOME}/Library/Sounds"
+
 git submodule update --init --recursive
 
 # inits zsh
@@ -35,3 +40,18 @@ echo 'initialising alacritty...'
 mkdir -p "${DOTS_ALACRITTY_PARENT_DIR}"
 (rm -f "${DOTS_ALACRITTY_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/alacritty/alacritty.toml" "${DOTS_ALACRITTY_PATH}"
 echo 'done!'
+
+# inits claude
+echo 'initialising claude...'
+mkdir -p "${DOTS_CLAUDE_DIR}"
+(rm -f "${DOTS_CLAUDE_SETTINGS_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/claude/settings.json" "${DOTS_CLAUDE_SETTINGS_PATH}"
+(rm -f "${DOTS_CLAUDE_STATUSLINE_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/claude/statusline-command.sh" "${DOTS_CLAUDE_STATUSLINE_PATH}"
+echo 'done!'
+
+# copy sound files to Library/Sounds (macOS only)
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    echo 'copying sound files to Library/Sounds...'
+    mkdir -p "${DOTS_SOUNDS_DIR}"
+    cp "${DOTS_DIR}/claude/sounds/"*.mp3 "${DOTS_SOUNDS_DIR}/" 2>/dev/null || echo 'No mp3 files to copy or already exist'
+    echo 'done!'
+fi
