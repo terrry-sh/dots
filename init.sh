@@ -12,6 +12,9 @@ DOTS_TMUX_PATH="${HOME}/.tmux.conf"
 DOTS_ALACRITTY_PARENT_DIR="${HOME}/.config/alacritty"
 DOTS_ALACRITTY_PATH="${DOTS_ALACRITTY_PARENT_DIR}/alacritty.toml"
 
+DOTS_GHOSTTY_PARENT_DIR="${HOME}/.config/ghostty"
+DOTS_GHOSTTY_PATH="${DOTS_GHOSTTY_PARENT_DIR}/config"
+
 DOTS_CLAUDE_DIR="${HOME}/.claude"
 DOTS_CLAUDE_SETTINGS_PATH="${DOTS_CLAUDE_DIR}/settings.json"
 DOTS_CLAUDE_STATUSLINE_PATH="${DOTS_CLAUDE_DIR}/statusline-command.sh"
@@ -39,6 +42,11 @@ echo 'done!'
 echo 'initialising alacritty...'
 mkdir -p "${DOTS_ALACRITTY_PARENT_DIR}"
 (rm -f "${DOTS_ALACRITTY_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/alacritty/alacritty.toml" "${DOTS_ALACRITTY_PATH}"
+echo 'done!'
+
+echo 'initialising ghossty...'
+mkdir -p "${DOTS_GHOSTTY_PARENT_DIR}"
+(rm -f "${DOTS_GHOSTTY_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/ghostty/config" "${DOTS_GHOSTTY_PATH}"
 echo 'done!'
 
 # inits claude

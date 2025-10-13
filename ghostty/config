@@ -1,0 +1,5 @@
+# Font configuration
+font-family = "MesloLGM Nerd Font"
+font-size = 20
+
+theme = Dracula

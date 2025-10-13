@@ -1,4 +1,5 @@
 [font]
+normal = { family = "MesloLGM Nerd Font", style = "Regular" }
 size = 20.0
 
 # Dracula theme colors
