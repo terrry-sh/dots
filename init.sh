@@ -35,7 +35,7 @@ echo 'done!'
 # inits nvim
 echo 'initialising nvim'
 mkdir -p "${DOTS_NVIM_PARENT_DIR}"
-(rm -f "${DOTS_NVIM_DIR}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/nvim" "${DOTS_NVIM_DIR}"
+(rm -rf "${DOTS_NVIM_DIR}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/nvim" "${DOTS_NVIM_DIR}"
 echo 'done!'
 
 # inits alacritty
