@@ -3,3 +3,4 @@ font-family = "MesloLGM Nerd Font"
 font-size = 20
 
 theme = Dracula
+macos-option-as-alt = left

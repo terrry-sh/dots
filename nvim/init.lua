@@ -248,6 +248,36 @@ rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
 	{
+		"clvnkhr/macaltkey.nvim",
+
+		config = function()
+			require("macaltkey").setup({
+				language = "en-US", -- American
+				-- or "en-GB" British. US is default
+
+				modifier = "aA",
+				-- If this is a single char like 'y', then
+				-- will convert <y-x> or <Y-x> (case insensitive) to the character at option-x.
+				-- also accepts arbitrary strings, e.g. 'abc' will convert
+				-- any of <a-x>, <b-x>, and <c-x> (case sensitive).
+				-- Can be passed to the extra opts table of the
+				-- convenience functions.
+
+				double_set = false,
+				-- If this is true, then will set both the converted
+				-- and unconverted keybind, e.g. both <a-a> and å.
+				-- Can be passed to the extra opts table of the
+				-- convenience functions.
+			})
+
+			-- I don't recommend it, but you can put
+			-- require"macaltkey".os = "darwin" here to force conversions.
+			-- require"macaltkey".dict = {...} here to use a custom dict.
+			-- I want option + backspace to work in insert mode - alas it doesn't
+			vim.keymap.set("i", "<a-BS>", "<C-W>", { noremap = true })
+		end,
+	},
+	{
 		"stevearc/oil.nvim",
 		---@module 'oil'
 		---@type oil.SetupOpts
@@ -1069,7 +1099,7 @@ require("lazy").setup({
 				-- <c-k>: Toggle signature help
 				--
 				-- See :h blink-cmp-config-keymap for defining your own keymap
-				preset = "enter",
+				preset = "super-tab",
 
 				-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
