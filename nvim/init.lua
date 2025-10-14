@@ -900,7 +900,7 @@ require("lazy").setup({
 			local servers = {
 				clangd = {},
 				-- gopls = {},
-				-- pyright = {},
+				basedpyright = {},
 				ruff = {},
 				rust_analyzer = {},
 				-- sourcekit = { cmd = '/usr/bin/sourcekit-lsp' },
