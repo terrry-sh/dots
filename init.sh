@@ -15,6 +15,9 @@ DOTS_ALACRITTY_PATH="${DOTS_ALACRITTY_PARENT_DIR}/alacritty.toml"
 DOTS_GHOSTTY_PARENT_DIR="${HOME}/.config/ghostty"
 DOTS_GHOSTTY_PATH="${DOTS_GHOSTTY_PARENT_DIR}/config"
 
+DOTS_HELIX_PARENT_DIR="${HOME}/.config/helix"
+DOTS_HELIX_PATH="${DOTS_HELIX_PARENT_DIR}/config.toml"
+
 DOTS_CLAUDE_DIR="${HOME}/.claude"
 DOTS_CLAUDE_SETTINGS_PATH="${DOTS_CLAUDE_DIR}/settings.json"
 DOTS_CLAUDE_STATUSLINE_PATH="${DOTS_CLAUDE_DIR}/statusline-command.sh"
@@ -49,7 +52,10 @@ mkdir -p "${DOTS_GHOSTTY_PARENT_DIR}"
 (rm -f "${DOTS_GHOSTTY_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/ghostty/config" "${DOTS_GHOSTTY_PATH}"
 echo 'done!'
 
-# inits claude
+echo 'initialising helix...'
+mkdir -p "${DOTS_HELIX_PARENT_DIR}"
+(rm -f "${DOTS_HELIX_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/helix/config" "${DOTS_HELIX_PATH}"
+echo 'done!'                                                                                                             # inits claude
 echo 'initialising claude...'
 mkdir -p "${DOTS_CLAUDE_DIR}"
 (rm -f "${DOTS_CLAUDE_SETTINGS_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/claude/settings.json" "${DOTS_CLAUDE_SETTINGS_PATH}"

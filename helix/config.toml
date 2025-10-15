@@ -1,0 +1,5 @@
+[editor.cursor-shape]
+insert = "bar"
+
+[editor]
+evil = true
