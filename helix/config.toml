@@ -1,5 +1,8 @@
-[editor.cursor-shape]
-insert = "bar"
+
+theme = "tokyonight_moon"
 
 [editor]
 evil = true
+
+[editor.cursor-shape]
+insert = "bar"

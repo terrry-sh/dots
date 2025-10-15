@@ -54,7 +54,7 @@ echo 'done!'
 
 echo 'initialising helix...'
 mkdir -p "${DOTS_HELIX_PARENT_DIR}"
-(rm -f "${DOTS_HELIX_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/helix/config" "${DOTS_HELIX_PATH}"
+(rm -f "${DOTS_HELIX_PATH}" || echo 'Ignoring fail'; true) && ln -s "${DOTS_DIR}/helix/config.toml" "${DOTS_HELIX_PATH}"
 echo 'done!'                                                                                                             # inits claude
 echo 'initialising claude...'
 mkdir -p "${DOTS_CLAUDE_DIR}"
