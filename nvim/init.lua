@@ -937,6 +937,7 @@ require("lazy").setup({
 				rust_analyzer = {},
 				-- sourcekit = { cmd = '/usr/bin/sourcekit-lsp' },
 				ocamllsp = {},
+				intelephense = {},
 
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
